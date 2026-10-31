@@ -9,11 +9,11 @@ output:
     theme: flatly
 ---
 
-> AI Assistance Declaration (draft): ChatGPT assisted with documentation structure, wording, and illustrative code blocks on October 31, 2026. Prompts and response summaries are recorded in Appendix.md. Student review, execution, and verification are pending; this draft does not certify that they have occurred. Final calculations, if any, must be completed and checked by the student.
+> AI Assistance Declaration: I used ChatGPT for documentation structure, wording, illustrative R examples, and revision guidance. English translations of my prompts and response summaries are recorded in Appendix.md. I rendered the original R Markdown document in RStudio and previewed the README on GitHub; ChatGPT checked the HTML and screenshots I supplied. No analytical calculations were performed. I am responsible for reviewing the accuracy and originality of this work.
 
 # Purpose
 
-Document a proposed `sales_preview.R` workflow that creates and inspects fictional retail records. The examples below are AI-suggested documentation examples for the student to review, adapt, and execute. They are not represented as student-authored or verified code.
+Document the self-contained R workflow in this file: create fictional retail records, inspect their structure, display a table, and plot units by product. No separate `sales_preview.R` file is included. The illustrative code was suggested by ChatGPT; the original document was rendered by Mohammad Aljarad in RStudio. The supplied HTML and screenshots support the verification results below.
 
 # Inputs
 
@@ -64,7 +64,7 @@ barplot(
 
 # Outputs
 
-A successful knit should create an HTML document containing the explanatory sections, code, structure display, input table, and chart. The R session also creates the `sales` data frame. No source data are overwritten and no computed business conclusions are claimed.
+Knitting this source file creates `Sales_Documentation.html`, containing the explanatory sections, code, structure display, input table, and chart. The original supplied HTML contains these outputs. The render creates the `sales` data frame in its execution environment; it need not appear in the interactive RStudio Global Environment. No source data are overwritten and no computed business conclusions are claimed. Re-knit after saving this text revision to update the HTML.
 
 # Verification and troubleshooting
 
@@ -76,8 +76,16 @@ A successful knit should create an HTML document containing the explanatory sect
 
 If `knitr` or `rmarkdown` is missing, install the packages using the README instructions. If Pandoc is unavailable, use an RStudio or Posit Cloud session configured for R Markdown rendering.
 
-No calculation is necessary for this import-and-inspection example. If numerical analysis is added, follow the assignment's Sheets calculation, independent cross-check, and self/peer spot-check requirements.
+No calculation is necessary for this creation-and-inspection example. If numerical analysis is added, follow the assignment's Sheets calculation, independent cross-check, and self/peer spot-check requirements.
 
 # Validation status
 
-Not yet executed or knitted by the student. Update this section only after verification.
+The original version was rendered in RStudio on October 31, 2026. ChatGPT reviewed the student-supplied HTML and screenshots:
+
+- The structure output contains four observations and three variables.
+- Table entries match the source: Notebook (10, 4), Pen (15, 2), Folder (8, 3), and Marker (12, 5), where each pair is units and unit price in CAD.
+- The chart shows the same product order and unit quantities.
+- The supplied screenshots show readable headings, code blocks, a table, and the chart.
+- Screenshots show R 4.6.2 and package installation messages for rmarkdown 2.32 and knitr 1.52. These are screenshot observations, not a complete sessionInfo() record.
+
+This revision preserves every R code chunk and changes explanatory text only. Its new HTML has not yet been generated or reviewed. Full input validation, an independent peer check, and a clean-session rerun are not established by the existing evidence.

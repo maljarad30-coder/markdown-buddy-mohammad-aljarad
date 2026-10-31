@@ -1,19 +1,13 @@
-> AI Assistance Declaration (draft): ChatGPT assisted with documentation structure, wording, and illustrative code blocks on October 31, 2026. Prompts and response summaries are recorded in Appendix.md. Student review, execution, and verification are pending; this draft does not certify that they have occurred. Final calculations, if any, must be completed and checked by the student.
+> AI Assistance Declaration: I used ChatGPT for documentation structure, wording, illustrative R examples, and revision guidance. English translations of my prompts and response summaries are recorded in Appendix.md. I rendered the original R Markdown document in RStudio and previewed the README on GitHub; ChatGPT checked the HTML and screenshots I supplied. No analytical calculations were performed. I am responsible for reviewing the accuracy and originality of this work.
 
-# Reflection - Working Draft
+# Reflection
 
 **Mohammad Aljarad | BDA400 Assignment 1**
 
-The assignment refers to three reflection questions, but their wording is absent from the supplied instruction PDF. The topics below are provisional writing prompts, not claimed answers to the missing questions. Replace their headings with the actual questions and write or approve responses based on your own experience.
+## Experience and learning
 
-## Topic 1: How AI can support documentation
+The most challenging part was understanding how R, RStudio, and GitHub fit together. I installed R and the required packages, rendered the R Markdown document, and uploaded the documentation files to GitHub with step-by-step guidance. This activity helped me understand the difference between the editable `.Rmd` source and its rendered HTML output. I also learned that AI-generated documentation needs careful review: a document can display correctly while still containing draft statements or incomplete information. Checking the table, chart, and README formatting helped me see why verification matters before submission.
 
-AI can propose a useful starting structure by separating a project's purpose, installation steps, inputs, and examples. For this project, explicit filenames and a data dictionary can help a new reader understand what to open and what the fields mean. A useful personal response should identify which suggestion you adopted and why.
+## Scope and authorship
 
-## Topic 2: Why validation remains necessary
-
-Readable Markdown does not prove that an R example runs. GitHub preview checks the README's presentation, while knitting checks whether an R Markdown document can execute and render. A personal response should describe one actual check, its outcome, and any correction you made. Do not report a successful knit before performing it.
-
-## Topic 3: Responsible AI use and improvements
-
-An accurate disclosure distinguishes AI suggestions from student revisions and records prompts, dates, and verification methods. Synthetic inputs avoid exposing customer information. A personal response should explain which wording or example you changed, what remains limited, and how you would improve the workflow next time.
+ChatGPT drafted the paragraph above, and Mohammad Aljarad approved it in the conversation. It is an approved general reflection on this activity. The assignment refers to three reflection questions, but their wording was not present in the supplied instruction PDF or the course screenshots examined. This paragraph is not represented as three answers to unknown questions. Obtain the exact questions to confirm full coverage before final submission.

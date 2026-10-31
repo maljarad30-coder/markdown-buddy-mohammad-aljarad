@@ -1,0 +1,83 @@
+---
+title: "Synthetic Retail Sales: Script Documentation"
+author: "Mohammad Aljarad"
+date: "2026-10-31"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    theme: flatly
+---
+
+> AI Assistance Declaration (draft): ChatGPT assisted with documentation structure, wording, and illustrative code blocks on October 31, 2026. Prompts and response summaries are recorded in Appendix.md. Student review, execution, and verification are pending; this draft does not certify that they have occurred. Final calculations, if any, must be completed and checked by the student.
+
+# Purpose
+
+Document a proposed `sales_preview.R` workflow that creates and inspects fictional retail records. The examples below are AI-suggested documentation examples for the student to review, adapt, and execute. They are not represented as student-authored or verified code.
+
+# Inputs
+
+The example creates its data internally. No file path, personal data, network request, or random sampling is required. `product` identifies a fictional item; `units` records its fictional sales quantity; `unit_price` records its fictional price in CAD.
+
+## Create the example data
+
+```{r synthetic-input}
+sales <- data.frame(
+  product = c("Notebook", "Pen", "Folder", "Marker"),
+  units = c(10, 15, 8, 12),
+  unit_price = c(4, 2, 3, 5)
+)
+```
+
+# Workflow
+
+## Inspect the structure
+
+The structure display helps the reader check that labels are character values and the other fields are numeric.
+
+```{r inspect-structure}
+str(sales)
+```
+
+## Display the records
+
+This table presents the supplied inputs without calculating summary statistics.
+
+```{r display-inputs}
+knitr::kable(sales, caption = "Fictional retail inputs; prices in CAD")
+```
+
+## Visualize units
+
+The chart uses the supplied quantities directly. Its heights should match the `units` column, with the product names in the same order.
+
+```{r units-chart, fig.width=7, fig.height=4}
+barplot(
+  height = sales$units,
+  names.arg = sales$product,
+  main = "Synthetic Units Sold by Product",
+  xlab = "Product",
+  ylab = "Units sold",
+  col = "steelblue"
+)
+```
+
+# Outputs
+
+A successful knit should create an HTML document containing the explanatory sections, code, structure display, input table, and chart. The R session also creates the `sales` data frame. No source data are overwritten and no computed business conclusions are claimed.
+
+# Verification and troubleshooting
+
+1. Knit in a fresh session and record whether it completes without errors.
+2. Compare the rendered table with each original input value.
+3. Compare the chart labels and heights with the input records.
+4. Inspect headings and code blocks in the rendered document.
+5. Record the actual R version and package versions using `sessionInfo()`.
+
+If `knitr` or `rmarkdown` is missing, install the packages using the README instructions. If Pandoc is unavailable, use an RStudio or Posit Cloud session configured for R Markdown rendering.
+
+No calculation is necessary for this import-and-inspection example. If numerical analysis is added, follow the assignment's Sheets calculation, independent cross-check, and self/peer spot-check requirements.
+
+# Validation status
+
+Not yet executed or knitted by the student. Update this section only after verification.

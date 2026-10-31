@@ -9,11 +9,11 @@ output:
     theme: flatly
 ---
 
-> AI Assistance Declaration: I used ChatGPT for documentation structure, wording, illustrative R examples, and revision guidance. English translations of my prompts and response summaries are recorded in Appendix.md. I rendered the original R Markdown document in RStudio and previewed the README on GitHub; ChatGPT checked the HTML and screenshots I supplied. No analytical calculations were performed. I am responsible for reviewing the accuracy and originality of this work.
+> AI Assistance Declaration: ChatGPT assisted with documentation, illustrative R code, revision, and reflection drafting. Mohammad Aljarad rendered the R Markdown in RStudio and previewed the README on GitHub. Supplied HTML and screenshots were reviewed for consistency. Actual requests and review results are recorded in Appendix.md. No analytical calculations were performed.
 
 # Purpose
 
-Document the self-contained R workflow in this file: create fictional retail records, inspect their structure, display a table, and plot units by product. No separate `sales_preview.R` file is included. The illustrative code was suggested by ChatGPT; the original document was rendered by Mohammad Aljarad in RStudio. The supplied HTML and screenshots support the verification results below.
+Document `sales_preview.R`: create fictional retail records, inspect their structure, display records, and plot units by product. The standalone script uses base R and prints the records to the console. This R Markdown reproduces its data and plotting expressions and uses `knitr::kable()` to format the same records for HTML. Both files are self-contained; knitting does not require sourcing the script.
 
 # Inputs
 
@@ -64,7 +64,7 @@ barplot(
 
 # Outputs
 
-Knitting this source file creates `Sales_Documentation.html`, containing the explanatory sections, code, structure display, input table, and chart. The original supplied HTML contains these outputs. The render creates the `sales` data frame in its execution environment; it need not appear in the interactive RStudio Global Environment. No source data are overwritten and no computed business conclusions are claimed. Re-knit after saving this text revision to update the HTML.
+Knitting this source file creates `Sales_Documentation.html`, containing the explanatory sections, code, structure display, input table, and chart. The original and revised HTML supplied by the student contain these outputs. The render creates the `sales` data frame in its execution environment; it need not appear in the interactive RStudio Global Environment. No source data are overwritten and no computed business conclusions are claimed.
 
 # Verification and troubleshooting
 
@@ -80,7 +80,7 @@ No calculation is necessary for this creation-and-inspection example. If numeric
 
 # Validation status
 
-The original version was rendered in RStudio on October 31, 2026. ChatGPT reviewed the student-supplied HTML and screenshots:
+The original and revised documentation were rendered in RStudio on October 31, 2026. ChatGPT reviewed the student-supplied HTML and screenshots:
 
 - The structure output contains four observations and three variables.
 - Table entries match the source: Notebook (10, 4), Pen (15, 2), Folder (8, 3), and Marker (12, 5), where each pair is units and unit price in CAD.
@@ -88,4 +88,4 @@ The original version was rendered in RStudio on October 31, 2026. ChatGPT review
 - The supplied screenshots show readable headings, code blocks, a table, and the chart.
 - Screenshots show R 4.6.2 and package installation messages for rmarkdown 2.32 and knitr 1.52. These are screenshot observations, not a complete sessionInfo() record.
 
-This revision preserves every R code chunk and changes explanatory text only. Its new HTML has not yet been generated or reviewed. Full input validation, an independent peer check, and a clean-session rerun are not established by the existing evidence.
+The supplied revised HTML was inspected and its table and chart match the inputs. The updated README was also previewed on GitHub. This final documentation edit preserves all four executable chunks. The new standalone script shares the data, structure, and plotting expressions; it was checked against these chunks but was not separately executed in this review. A clean-session rerun and independent peer review are not claimed.

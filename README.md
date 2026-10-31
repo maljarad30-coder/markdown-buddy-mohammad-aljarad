@@ -1,90 +1,85 @@
-> AI Assistance Declaration: I used ChatGPT for documentation structure, wording, illustrative R examples, and revision guidance. English translations of my prompts and response summaries are recorded in Appendix.md. I rendered the original R Markdown document in RStudio and previewed the README on GitHub; ChatGPT checked the HTML and screenshots I supplied. No analytical calculations were performed. I am responsible for reviewing the accuracy and originality of this work.
+> AI Assistance Declaration: ChatGPT assisted with documentation, illustrative R code, revision, and reflection drafting. Mohammad Aljarad rendered the R Markdown in RStudio and previewed the README on GitHub. Supplied HTML and screenshots were reviewed for consistency. Actual requests and review results are recorded in Appendix.md. No analytical calculations were performed.
 
 # Synthetic Retail Sales: R Documentation Project
 
-**Mohammad Aljarad | BDA400 | Assignment 1**
-
-> Documentation revised on October 31, 2026. The revised R Markdown was rendered successfully, and the updated README was previewed on GitHub. Verification evidence is recorded in Appendix.md.
+**Mohammad Aljarad | BDA400 | Assignment 1 | October 31, 2026**
 
 ## Overview
 
-This small R project demonstrates how to document the creation and inspection of fictional retail sales records. Its purpose is to make the input, workflow, and outputs understandable to a new reader. It does not use real customer data or produce business recommendations.
+Create and inspect fictional retail records using R. The project displays a data structure, records, and a chart of units by product. Inputs are created internally; no external dataset or customer information is used.
 
 ## Project files
 
 | File | Purpose |
 | --- | --- |
-| `README.md` | Project overview, setup, and usage |
-| `Sales_Documentation.Rmd` | Self-contained workflow, explanations, and executable R chunks |
-| `Reflection.md` | Approved experience paragraph and reflection scope note |
-| `Appendix.md` | AI record, README outline, references, and verification checklist |
-
-The executable workflow is contained in `Sales_Documentation.Rmd`: create a fictional data frame, display its structure, format its records as a table, and draw a units chart. There is no separate `sales_preview.R` file in this repository. The README example below is a short console preview; the R Markdown document contains the full workflow.
+| `README.md` | Setup, usage, dependencies, verification, and disclosure |
+| `sales_preview.R` | Standalone base R script: data, console output, and chart |
+| `Sales_Documentation.Rmd` | Script documentation with executable examples and an HTML table |
+| `Reflection.md` | Approved reflection and three proposed questions with answers |
+| `Appendix.md` | Actual prompt record, review findings, and verification evidence |
 
 ## Installation
 
-Use R with RStudio or Posit Cloud. Base R provides data creation, structure inspection, console printing, and plotting. The R Markdown table uses `knitr`; document rendering uses `rmarkdown`, `knitr`, and Pandoc (normally available through RStudio).
-
-Run once in the R Console if needed:
+Use R and RStudio. The standalone script needs only base R. For R Markdown, install:
 
 ```r
 install.packages(c("rmarkdown", "knitr"))
 ```
 
-Keep all four documentation files in the same project folder. No external dataset is required.
-
-## Synthetic input
-
-| Field | Meaning | Type |
-| --- | --- | --- |
-| `product` | Fictional product label | Character |
-| `units` | Fictional units sold for that record | Numeric |
-| `unit_price` | Fictional price in CAD | Numeric |
-
-These values are illustrative inputs, not measured observations. No totals, revenue estimates, or averages are supplied as verified results.
+Rendering also needs Pandoc, normally supplied with RStudio. Keep the five project files in the same directory.
 
 ## Example usage
 
-The following console example creates the same synthetic inputs used in the R Markdown document:
+Set the working directory to the project folder. Run the standalone script:
 
 ```r
-sales <- data.frame(
-  product = c("Notebook", "Pen", "Folder", "Marker"),
-  units = c(10, 15, 8, 12),
-  unit_price = c(4, 2, 3, 5)
-)
-str(sales)
-print(sales)
+source("sales_preview.R")
 ```
 
-To render the complete report, open `Sales_Documentation.Rmd` in RStudio, save it, and select **Knit**. Open the resulting `Sales_Documentation.html` to inspect the output. Alternatively, run this from the project folder:
+The Console shows structure and records; RStudio's Plots pane shows the chart. To build the documented HTML report, open `Sales_Documentation.Rmd` and select Knit, or run:
 
 ```r
 rmarkdown::render("Sales_Documentation.Rmd")
 ```
 
+The `.Rmd` is editable source. `Sales_Documentation.html` is generated output. The R Markdown repeats the script's workflow and formats its records with `knitr::kable()`; it does not source the script.
+
+## Synthetic input
+
+| Field | Type | Meaning |
+| --- | --- | --- |
+| `product` | Character | Fictional product label |
+| `units` | Numeric | Fictional units sold |
+| `unit_price` | Numeric | Fictional unit price in CAD |
+
+| Product | Units | Unit price (CAD) |
+| --- | ---: | ---: |
+| Notebook | 10 | 4 |
+| Pen | 15 | 2 |
+| Folder | 8 | 3 |
+| Marker | 12 | 5 |
+
 ## Outputs and limitations
 
-The original document was rendered in RStudio on October 31, 2026. The supplied `Sales_Documentation.html` contains the input table, data structure, and a labelled chart of units by product. The `.Rmd` is the editable source; the `.html` is the generated report. The current revision changes documentation text only and must be knitted again to refresh that report.
-
-The example assumes complete numeric inputs and one record per product. A chart of units is not a revenue comparison. Real-world data would require additional checks for missing values, duplicates, and invalid prices.
+The script prints records and creates a chart in the active graphics device. The R Markdown creates HTML with explanations, code, structure output, a table, and the chart. No input files are overwritten. No totals, averages, revenue estimates, or business recommendations are calculated. The example assumes complete inputs and one record per product; production data would need additional validation.
 
 ## Verification
 
-| Check | Evidence and result |
+| Check | Result and evidence |
 | --- | --- |
-| Original R Markdown render | Student-supplied HTML and RStudio screenshots show a rendered report with code and outputs. |
-| Data structure | The HTML reports a data frame with four observations and three variables. |
-| Table values | Notebook: 10 units, CAD 4; Pen: 15 units, CAD 2; Folder: 8 units, CAD 3; Marker: 12 units, CAD 5. These match the source inputs. |
-| Chart | Labels follow Notebook, Pen, Folder, Marker; heights match 10, 15, 8, 12. |
-| Original GitHub preview | Screenshots show rendered headings, tables, links, and highlighted R code. Link appearance does not confirm every destination works. |
-| Revised files | R code chunks are unchanged; re-knit and preview this revision after uploading it. |
+| R Markdown execution | Original and revised HTML supplied by the student show successful output |
+| Structure | Four observations and three variables |
+| Table | Every value matches the synthetic inputs above |
+| Chart | Product order and bar heights match the units column |
+| GitHub formatting | Supplied screenshots show headings, tables, and highlighted code; updated README preview also supplied |
+| Final source consistency | All four executable R Markdown chunks preserved; stale pending-preview claims removed |
+| Standalone script | Data, structure, and plotting expressions match the rendered R Markdown; uses base R `print()` for records; no separate execution claimed |
 
-These are observations from the submitted evidence, not a claim that every possible input has been tested. See Appendix.md for remaining assignment requirements.
+Screenshots show R 4.6.2, rmarkdown 2.32, and knitr 1.52. Evidence and review scope are recorded in [Appendix.md](Appendix.md).
 
 ## License
 
-No open-source license has been selected. This is an academic documentation exercise; no reuse permissions are asserted.
+No open-source license has been selected; no reuse permissions are asserted.
 
 ## References
 
@@ -94,6 +89,4 @@ No open-source license has been selected. This is an academic documentation exer
 
 ## AI Assistance Disclosure
 
-ChatGPT drafted the structure and explanatory text and suggested the initial illustrative R code. My main requests were to work through the assignment, review the README and R Markdown, apply two clarity improvements, update verification using my RStudio and GitHub evidence, and add the reflection paragraph I approved. The prompt record in Appendix.md contains English translations of the original Arabic requests.
-
-This revision makes two improvements: (1) it identifies the actual executable file and distinguishes source from output, and (2) it replaces obsolete pending-execution statements with specific evidence and verification limits. ChatGPT applied these edits; they are not presented as unaided student writing. The original code chunks were retained. The reflection paragraph was drafted by ChatGPT and approved by me. The exact three assigned reflection questions remain unavailable in the supplied material.
+ChatGPT helped draft and review these files. Two documentation improvements clarified the real workflow and replaced obsolete verification statements with evidence-based results. At the student's request, the final revision adds a standalone R script and three proposed reflection questions. Those questions are identified as supplementary rather than quoted from the college instructions. The student remains responsible for reviewing the submitted work.

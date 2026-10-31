@@ -4,7 +4,7 @@
 
 **Mohammad Aljarad | BDA400 | Assignment 1**
 
-> Documentation revised on October 31, 2026. Original execution and GitHub preview evidence are recorded in Appendix.md; the revised files still require a new preview.
+> Documentation revised on October 31, 2026. The revised R Markdown was rendered successfully, and the updated README was previewed on GitHub. Verification evidence is recorded in Appendix.md.
 
 ## Overview
 
